@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<style>
+form {
+    margin: auto;
+    width: 35%;
+}
+
+.result {
+    margin: auto;
+    width: 35%;
+    border: 1px solid #ccc;
+}
+</style>
+
+<head>
+    <title>Predict the rental price of Honolulu apartment!! </title>
+
+
+</head>
+<form action="{{ url_for('main') }}" method="POST">
+    <fieldset>
+        <legend>Input values:</legend>
+        <h3>Please input the value of total rooms of the apartment (bathrooms * bedrooms) and the total apartment area in sq meters <h3>
+        
+        <br>
+        <br> Rooms:
+        <input name="rooms" type="number" required>
+        <br>
+        <br> Area (m2):
+        <input name="area" type="number" required>
+        <br>
+        <br>
+        <input type="submit">
+    </fieldset>
+</form>
+<br>
+
+
+<div class="result" align="center">
+   		<p style="font-size:50px">{{ result }}$</p>
+</div>
+
+</html>
